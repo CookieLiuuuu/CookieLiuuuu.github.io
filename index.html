@@ -1,44 +1,54 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>刘光辉 | M.S. Student @ Waseda</title>
+    <title>Guanghui Liu | M.S. Student @ Waseda</title>
     <meta
       name="description"
-      content="刘光辉的个人主页，聚焦信息检索、多模态学习与机器学习工程实践。"
+      content="Guanghui Liu's personal website focused on information retrieval, multimodal learning, and machine learning engineering."
     />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div class="space" aria-hidden="true">
+      <div class="stars stars-far"></div>
+      <div class="stars stars-mid"></div>
+      <div class="stars stars-near"></div>
+      <div id="meteors"></div>
+    </div>
+
     <div class="bg-shape bg-shape-1" aria-hidden="true"></div>
     <div class="bg-shape bg-shape-2" aria-hidden="true"></div>
 
     <header class="hero container reveal">
       <p class="badge">CookieLiuuuu.github.io</p>
-      <h1>刘光辉</h1>
+      <h1>Guanghui Liu</h1>
       <p class="subtitle">M.S. Student in CSE @ Waseda University</p>
       <p class="intro">
-        你好，我是刘光辉，目前在日本东京。2026 年我已在早稻田大学计算机科学与工程硕士项目就读，研究兴趣包括信息检索、
-        多模态学习与大语言模型评估，专注把研究方法转化为可落地的 AI 系统。
+        I am Guanghui Liu, currently based in Tokyo, Japan. As of 2026, I am enrolled in the M.S. program in
+        Computer Science and Engineering at Waseda University. My interests include information retrieval,
+        multimodal learning, and LLM evaluation, with a strong focus on turning research ideas into deployable AI systems.
       </p>
       <div class="actions">
         <a class="btn primary" href="https://github.com/CookieLiuuuu" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="btn" href="#contact">联系我</a>
+        <a class="btn" href="#contact">Contact</a>
       </div>
     </header>
 
     <main class="container">
       <section class="card reveal">
-        <h2>关于我</h2>
+        <h2>About</h2>
         <p>
-          我于 2025 年 6 月毕业于哈尔滨工程大学计算机科学与技术专业，目前在早稻田大学攻读计算机科学与工程硕士（2025.09 - 2027.09）。
-          过往项目覆盖自动驾驶场景下的图像-点云检索、长尾分布下自监督学习优化与机器人视觉部署，兼顾算法效果与工程效率。
+          I received my B.E. in Computer Science and Technology from Harbin Engineering University in June 2025
+          and am currently pursuing an M.S. in Computer Science and Engineering at Waseda University (Sep 2025 - Sep 2027).
+          My work spans multimodal retrieval for autonomous driving, long-tailed self-supervised learning,
+          and robot vision deployment, balancing algorithmic performance with engineering efficiency.
         </p>
       </section>
 
       <section class="card reveal">
-        <h2>技能栈</h2>
+        <h2>Skills</h2>
         <ul class="chips">
           <li>Python</li>
           <li>PyTorch</li>
@@ -60,46 +70,51 @@
       </section>
 
       <section class="card reveal">
-        <h2>项目经历</h2>
+        <h2>Research & Project Experience</h2>
         <div class="item">
-          <h3>Multimodal Image Retrieval with Point Cloud Assistance（毕业设计）</h3>
+          <h3>Multimodal Image Retrieval with Point Cloud Assistance</h3>
           <p>
-            面向自动驾驶场景构建图像-点云联合检索方案，设计基于 ResNet 与 PointNetVLAD 的轻量跨模态注意力融合网络；
-            在 nuScenes 数据集上实现 Precision@5 > 95%，并获优秀本科毕业论文。
+            Undergraduate thesis in autonomous driving and multimodal learning (Dec 2024 - Jun 2025).
+            Designed a lightweight cross-modal attention fusion network with ResNet and PointNetVLAD for
+            explicit image-point cloud alignment. Achieved Precision@5 > 95% on nuScenes and received
+            the Outstanding Undergraduate Thesis award.
           </p>
         </div>
         <div class="item">
-          <h3>Sample-level Tail Encouragement for Long-tailed SSL（TASE）</h3>
+          <h3>Sample-level Tail Encouragement for Long-tailed SSL (TASE)</h3>
           <p>
-            提出样本级自适应温度策略与伪标签引导机制，缓解自监督学习在长尾分布下的性能退化；在 CIFAR10-LT、
-            CIFAR100-LT、ImageNet100-LT 上验证并优于多种基线。
+            Research project on long-tailed self-supervised learning (Sep 2024 - Oct 2025).
+            Implemented sample-level adaptive temperature with pseudo-label guidance to improve tail-class
+            representation learning. Validated on CIFAR10-LT, CIFAR100-LT, and ImageNet100-LT with
+            results outperforming baseline methods.
           </p>
         </div>
         <div class="item">
-          <h3>Deep Learning and Robot Vision Applications（NUS）</h3>
+          <h3>Deep Learning and Robot Vision Applications (NUS)</h3>
           <p>
-            在新加坡国立大学交换项目中完成机器人视觉应用，基于 YOLOv7 与 MediaPipe 实现目标检测、跟踪与抓取任务，
-            并完成多模型推理优化，项目评分 A+。
+            Exchange research project at the National University of Singapore (May 2024 - Aug 2024).
+            Configured and fine-tuned YOLOv7 for real-time robotic visual recognition, integrated MediaPipe
+            for tracking and grasping, and optimized multi-model inference for deployment. Final grade: A+.
           </p>
         </div>
       </section>
 
       <section class="card reveal">
-        <h2>教育背景</h2>
+        <h2>Education</h2>
         <div class="item">
-          <h3>哈尔滨工程大学 · 计算机科学与技术（本科）</h3>
-          <p>2021.09 - 2025.06 | GPA 91.06/100（前 5%）</p>
+          <h3>Harbin Engineering University - B.E. in Computer Science and Technology</h3>
+          <p>Sep 2021 - Jun 2025</p>
         </div>
         <div class="item">
-          <h3>早稻田大学 · 计算机科学与工程（硕士在读）</h3>
-          <p>2025.09 - 2027.09 | 方向：Information Retrieval, LLM Evaluation, Machine Learning</p>
+          <h3>Waseda University - M.S. in Computer Science and Engineering (Enrolled)</h3>
+          <p>Sep 2025 - Sep 2027 | Focus: Information Retrieval, LLM Evaluation, Machine Learning</p>
         </div>
       </section>
 
       <section class="card reveal">
-        <h2>论文与奖项</h2>
+        <h2>Publications & Honors</h2>
         <div class="item">
-          <h3>ArXiv 论文</h3>
+          <h3>arXiv Preprint</h3>
           <p>
             Dataset Awareness is not Enough: Implementing Sample-level Tail Encouragement in Long-tailed
             Self-supervised Learning
@@ -107,24 +122,40 @@
           <p><a href="https://doi.org/10.48550/arXiv.2410.22883" target="_blank" rel="noreferrer">https://doi.org/10.48550/arXiv.2410.22883</a></p>
         </div>
         <div class="item">
-          <h3>奖项与荣誉</h3>
+          <h3>Honors</h3>
           <p>
-            连续 7 学期获得校级奖学金；第十三届“启航杯”大学生创新创业大赛三等奖；2025 年哈尔滨工程大学优秀毕业论文。
+            Awarded university scholarships for seven consecutive semesters; Third Prize in the 13th Qihang Cup
+            Innovation and Entrepreneurship Competition; Outstanding Undergraduate Thesis (2025).
           </p>
         </div>
       </section>
 
+      <section class="card reveal">
+        <h2>Languages</h2>
+        <p>
+          Japanese (daily and academic communication), English (TOEFL iBT 97, 2024), Mandarin Chinese (native).
+        </p>
+      </section>
+
+      <section class="card reveal">
+        <h2>Additional Information</h2>
+        <p>
+          Served in student leadership roles during undergraduate studies, coordinating student organizations
+          and academic activities with strong communication and organizational skills. Enjoy sports, traveling, and films.
+        </p>
+      </section>
+
       <section id="contact" class="card reveal">
-        <h2>联系方式</h2>
+        <h2>Contact</h2>
         <p>GitHub: <a href="https://github.com/CookieLiuuuu" target="_blank" rel="noreferrer">github.com/CookieLiuuuu</a></p>
-        <p>邮箱: <a href="mailto:liuguanghui.cookie@gmail.com">liuguanghui.cookie@gmail.com</a></p>
-        <p>电话: +81-070-6631-5547</p>
-        <p>地点: 1-8-8 Tokumaru, Itabashi-ku, Tokyo, Japan</p>
+        <p>Email: <a href="mailto:liuguanghui.cookie@gmail.com">liuguanghui.cookie@gmail.com</a></p>
+        <p>Phone: +81-070-6631-5547</p>
+        <p>Address: 1-8-8 Tokumaru, Itabashi-ku, Tokyo, Japan 175-0083</p>
       </section>
     </main>
 
     <footer class="container footer">
-      <p>© <span id="year"></span> 刘光辉</p>
+      <p>© <span id="year"></span> Guanghui Liu</p>
     </footer>
 
     <script src="./script.js"></script>
