@@ -9,6 +9,8 @@
   --accent: #ffffff;
   --accent-soft: rgba(255, 255, 255, 0.1);
   --shadow: 0 24px 50px rgba(0, 0, 0, 0.55);
+  --earth-texture: url("https://raw.githubusercontent.com/turban/webgl-earth/master/images/2_no_clouds_4k.jpg");
+  --earth-clouds: url("https://raw.githubusercontent.com/turban/webgl-earth/master/images/fair_clouds_4k.png");
 }
 
 * {
@@ -35,6 +37,17 @@ body {
   inset: 0;
   z-index: -3;
   pointer-events: none;
+}
+
+.nebula {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(520px 280px at 82% 14%, rgba(56, 82, 156, 0.22), transparent 68%),
+    radial-gradient(420px 240px at 18% 78%, rgba(55, 70, 120, 0.16), transparent 70%),
+    radial-gradient(300px 180px at 62% 84%, rgba(95, 74, 135, 0.12), transparent 72%);
+  filter: blur(2px);
+  opacity: 0.85;
 }
 
 .stars {
@@ -79,10 +92,10 @@ body {
 
 .earth-wrap {
   position: absolute;
-  right: -120px;
-  top: 50%;
+  right: -90px;
+  top: 42%;
   transform: translateY(-50%);
-  width: min(42vw, 520px);
+  width: min(36vw, 440px);
   aspect-ratio: 1 / 1;
   display: grid;
   place-items: center;
@@ -92,56 +105,60 @@ body {
 .earth-wrap::before {
   content: "";
   position: absolute;
-  width: 130%;
-  height: 130%;
+  width: 138%;
+  height: 138%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(87, 124, 255, 0.18), rgba(0, 0, 0, 0) 68%);
-  filter: blur(8px);
+  background: radial-gradient(circle, rgba(129, 171, 255, 0.22), rgba(0, 0, 0, 0) 64%);
+  filter: blur(12px);
 }
 
 .earth {
   position: relative;
-  width: min(31vw, 390px);
+  width: min(27vw, 340px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 0 44px rgba(106, 168, 255, 0.45), inset -30px -22px 60px rgba(0, 0, 0, 0.62);
-  background:
-    radial-gradient(circle at 35% 28%, rgba(180, 224, 255, 0.7), rgba(34, 92, 187, 0.18) 32%, rgba(2, 12, 34, 0.2) 65%),
-    radial-gradient(circle at 70% 70%, rgba(10, 56, 128, 0.95), rgba(7, 20, 50, 1) 70%);
+  box-shadow: 0 0 52px rgba(87, 145, 255, 0.35), inset -52px -26px 76px rgba(0, 0, 0, 0.78);
+  background: radial-gradient(circle at 30% 32%, #87d9ff 0%, #1e5cb3 45%, #0b1d4e 78%, #040816 100%);
   animation: earth-float 9s ease-in-out infinite;
 }
 
-.earth::before {
-  content: "";
+.earth-surface {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background-image:
-    radial-gradient(80px 50px at 24% 30%, rgba(96, 175, 103, 0.9), transparent 65%),
-    radial-gradient(110px 65px at 58% 38%, rgba(86, 160, 102, 0.88), transparent 70%),
-    radial-gradient(95px 55px at 71% 66%, rgba(122, 186, 102, 0.9), transparent 68%),
-    radial-gradient(65px 40px at 35% 69%, rgba(111, 179, 94, 0.82), transparent 72%);
-  filter: saturate(1.2);
-  transform-origin: center center;
-  animation: earth-spin 22s linear infinite;
+  background-image: var(--earth-texture), radial-gradient(circle at 40% 40%, #4ea4d8, #154b95 55%, #0a204f 100%);
+  background-repeat: repeat-x;
+  background-size: auto 100%, cover;
+  background-position: 0 50%;
+  filter: saturate(1.08) contrast(1.08) brightness(1.02);
+  animation: earth-spin 42s linear infinite;
 }
 
-.earth::after {
-  content: "";
+.earth-clouds {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-image: var(--earth-clouds);
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: 0 50%;
+  opacity: 0.26;
+  mix-blend-mode: screen;
+  filter: blur(0.6px);
+  animation: cloud-drift 60s linear infinite;
+}
+
+.earth-night {
   position: absolute;
   inset: 0;
   border-radius: 50%;
   background:
-    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 38%),
-    repeating-linear-gradient(
-      100deg,
-      rgba(255, 255, 255, 0.12) 0 12px,
-      rgba(255, 255, 255, 0.02) 12px 24px
-    );
-  mix-blend-mode: screen;
-  opacity: 0.45;
-  animation: cloud-drift 15s linear infinite;
+    linear-gradient(108deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.52) 56%, rgba(0, 0, 0, 0.84) 100%),
+    radial-gradient(circle at 22% 24%, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 32%),
+    radial-gradient(circle at 72% 34%, rgba(255, 211, 122, 0.16), transparent 14%),
+    radial-gradient(circle at 78% 48%, rgba(255, 227, 166, 0.12), transparent 12%),
+    radial-gradient(circle at 68% 64%, rgba(255, 207, 105, 0.1), transparent 11%);
 }
 
 .meteor {
@@ -390,19 +407,19 @@ a {
 
 @keyframes earth-spin {
   from {
-    transform: translateX(0) scale(1.05);
+    background-position: 0 50%;
   }
   to {
-    transform: translateX(-18%) scale(1.05);
+    background-position: -1200px 50%;
   }
 }
 
 @keyframes cloud-drift {
   from {
-    transform: translateX(0);
+    background-position: 0 50%;
   }
   to {
-    transform: translateX(-16%);
+    background-position: -900px 50%;
   }
 }
 
@@ -426,11 +443,11 @@ a {
   }
 
   .earth-wrap {
-    width: 54vw;
-    right: -120px;
+    width: 48vw;
+    right: -105px;
     top: 16%;
     transform: none;
-    opacity: 0.75;
+    opacity: 0.58;
   }
 }
 
@@ -441,8 +458,8 @@ a {
   .btn,
   .meteor,
   .earth,
-  .earth::before,
-  .earth::after {
+  .earth-surface,
+  .earth-clouds {
     animation: none !important;
     transition: none !important;
   }
