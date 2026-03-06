@@ -15,26 +15,6 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
-const meteorHost = document.getElementById("meteors");
-
-function spawnMeteor() {
-  if (!meteorHost) return;
-  const meteor = document.createElement("span");
-  meteor.className = "meteor";
-
-  const startX = Math.random() * (window.innerWidth * 0.9) + 40;
-  const startY = Math.random() * (window.innerHeight * 0.35) + 10;
-
-  meteor.style.left = `${startX}px`;
-  meteor.style.top = `${startY}px`;
-
-  meteorHost.appendChild(meteor);
-  setTimeout(() => meteor.remove(), 2100);
-}
-
-setInterval(spawnMeteor, 1900);
-setTimeout(spawnMeteor, 700);
-
 const shape1 = document.querySelector(".bg-shape-1");
 const shape2 = document.querySelector(".bg-shape-2");
 
